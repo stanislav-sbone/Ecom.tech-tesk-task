@@ -1,0 +1,24 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.text {
+  font-size: 26px;
+}
+
+.errorMessage {
+  font-size: 22px;
+  color: var(--text-secondary);
+}

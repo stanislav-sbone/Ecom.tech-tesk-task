@@ -4,10 +4,12 @@ import { fetchProducts } from '../../services/api';
 import type { Product } from '../../types/product';
 import ProductCard from '../ProductCard';
 import Loading from '../common/Loading';
+import Error from '../common/Error';
 
 const Main: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState({ isError: false, errorMessage: '' });
 
   useEffect(() => {
     const getProducts = async () => {
@@ -16,8 +18,11 @@ const Main: FC = () => {
         const data = await fetchProducts();
 
         setProducts(data);
-      } catch (error) {
-        console.log(error);
+      } catch (e) {
+        setError({
+          isError: true,
+          errorMessage: String(e),
+        });
       } finally {
         setLoading(false);
       }
@@ -30,6 +35,14 @@ const Main: FC = () => {
     return (
       <main className={styles.main}>
         <Loading />
+      </main>
+    );
+  }
+
+  if (error.isError) {
+    return (
+      <main className={styles.main}>
+        <Error message={error.errorMessage} />
       </main>
     );
   }
