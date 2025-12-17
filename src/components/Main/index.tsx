@@ -5,11 +5,15 @@ import type { Product } from '../../types/product';
 import ProductCard from '../ProductCard';
 import Loading from '../common/Loading';
 import Error from '../common/Error';
+import ProductFilter from '../ProductFilter';
+import NoMatches from '../common/NoMatches';
 
 const Main: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({ isError: false, errorMessage: '' });
+  const [filter, setFilter] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -31,6 +35,18 @@ const Main: FC = () => {
     getProducts();
   }, []);
 
+  useEffect(() => {
+    if (!filter) {
+      setFilteredProducts(products);
+    }
+
+    setFilteredProducts(
+      products.filter((product) =>
+        product.title.toLowerCase().includes(filter.toLowerCase())
+      )
+    );
+  }, [filter, products]);
+
   if (loading) {
     return (
       <main className={styles.main}>
@@ -47,12 +63,25 @@ const Main: FC = () => {
     );
   }
 
+  if (filteredProducts.length === 0) {
+    return (
+      <main className={styles.main}>
+        <div className={styles.container}>
+          <ProductFilter filter={filter} setFilter={setFilter} />
+          <h2 className={styles.title}>Каталог товаров</h2>
+          <NoMatches />
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>
+        <ProductFilter filter={filter} setFilter={setFilter} />
         <h2 className={styles.title}>Каталог товаров</h2>
         <div className={styles.productsList}>
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               title={product.title}
