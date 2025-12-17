@@ -1,0 +1,44 @@
+:root {
+  --text-primary: #0f172a;
+  --text-secondary: #6b7280;
+  --background-primary: #eff6ff;
+  --background-secondary: #fff;
+  --price-color: #16a34a;
+  --button-color: #6366f1;
+  --border-color: #6f6f6f;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
