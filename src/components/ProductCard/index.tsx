@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import styles from './ProductCard.module.css';
+import { formatNumber } from '../../utils/formatNumber';
 
 interface ProductCardProps {
   title: string;
@@ -15,7 +16,7 @@ const ProductCard: FC<ProductCardProps> = ({ title, image, price }) => {
       </div>
       <div className={styles.infoWrapper}>
         <h3 className={styles.title}>{title}</h3>
-        <div className={styles.price}>{price} ₽</div>
+        <div className={styles.price}>{formatNumber(price)} ₽</div>
       </div>
     </div>
   );
