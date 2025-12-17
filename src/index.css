@@ -3,9 +3,8 @@
   --text-secondary: #6b7280;
   --background-primary: #eff6ff;
   --background-secondary: #fff;
-  --price-color: #16a34a;
   --button-color: #6366f1;
-  --border-color: #6f6f6f;
+  --border-color: #adadad;
 }
 
 #root {

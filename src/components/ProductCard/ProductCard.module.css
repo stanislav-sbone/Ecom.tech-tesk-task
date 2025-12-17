@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-secondary);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+}
+
+.image {
+  width: 300px;
+  height: 325px;
+  margin-bottom: 2rem;
+}
+
+.infoWrapper {
+  width: 100%;
+  align-self: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+}

@@ -5,6 +5,14 @@
 }
 
 .title {
+  font-size: 32px;
   font-weight: 300;
   color: var(--text-secondary);
+}
+
+.productsList {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
