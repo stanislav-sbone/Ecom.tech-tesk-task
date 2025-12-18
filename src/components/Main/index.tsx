@@ -67,7 +67,7 @@ const Main: FC<MainProps> = ({ onProductClick }) => {
     );
   }
 
-  if (filteredProducts.length === 0) {
+  if (filteredProducts.length === 0 && filter.length > 0) {
     return (
       <main className={styles.main}>
         <div className={styles.container}>
