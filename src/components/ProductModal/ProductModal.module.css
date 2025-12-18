@@ -95,6 +95,18 @@
   opacity: 90%;
 }
 
+@media (min-width: 2000px) {
+  .modal {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .modal {
+    width: 50%;
+  }
+}
+
 @media (max-width: 1024px) {
   .modal {
     width: 80%;
