@@ -21,13 +21,15 @@
   gap: 2rem;
 }
 
+@media (max-width: 740px) {
+  .productsList {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 425px) {
   .productsList {
     padding: 1rem 0;
-  }
-
-  .productsList {
-    grid-template-columns: 1fr;
   }
 
   .title {
