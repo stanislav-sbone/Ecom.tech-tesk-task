@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  width: 45%;
+  width: 75%;
 }
 
 .closeButton {
@@ -47,7 +47,7 @@
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 1rem;
 }
 
@@ -93,4 +93,58 @@
 .buyButton:hover {
   transform: scale(1.02);
   opacity: 90%;
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 80%;
+  }
+
+  .image {
+    width: 300px;
+  }
+}
+
+@media (max-width: 830px) {
+  .modal {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 250px;
+  }
+}
+
+@media (max-width: 425px) {
+  .modal {
+    width: 95%;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .image {
+    width: 200px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .buyButton {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .description {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
 }
