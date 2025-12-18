@@ -8,7 +8,11 @@ import Error from '../common/Error';
 import ProductFilter from '../ProductFilter';
 import NoMatches from '../common/NoMatches';
 
-const Main: FC = () => {
+interface MainProps {
+  onProductClick: (product: Product) => void;
+}
+
+const Main: FC<MainProps> = ({ onProductClick }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({ isError: false, errorMessage: '' });
@@ -84,9 +88,8 @@ const Main: FC = () => {
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
-              title={product.title}
-              image={product.image}
-              price={product.price}
+              product={product}
+              onClick={() => onProductClick(product)}
             />
           ))}
         </div>
