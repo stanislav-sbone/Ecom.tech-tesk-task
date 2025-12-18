@@ -17,10 +17,10 @@ const Loading: FC = () => {
             cy="25"
             r="20"
             stroke="currentColor"
-            stroke-width="4"
+            strokeWidth="4"
             fill="none"
-            stroke-dashoffset="0"
-            stroke-linecap="round"
+            strokeDashoffset="0"
+            strokeLinecap="round"
             className={styles.circle}
           />
         </svg>
