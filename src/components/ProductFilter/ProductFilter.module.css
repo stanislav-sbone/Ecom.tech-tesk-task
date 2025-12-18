@@ -18,6 +18,7 @@
   background-size: 20px;
   color: var(--text-secondary);
   font-size: 16px;
+  text-overflow: ellipsis;
 }
 
 .clearButton {
@@ -43,5 +44,9 @@
 @media (max-width: 768px) {
   .input {
     width: 100%;
+  }
+
+  .clearButton {
+    right: 1rem;
   }
 }
