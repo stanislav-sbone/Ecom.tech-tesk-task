@@ -142,7 +142,7 @@
 @media (max-width: 425px) {
   .modal {
     width: 95%;
-    max-height: 85vh;
+    max-height: 95vh;
     overflow-y: auto;
   }
 
@@ -168,7 +168,7 @@
 
   .description {
     max-height: 200px;
-    overflow-y: auto;
+    overflow-y: scroll;
     padding-right: 0.5rem;
   }
 }
