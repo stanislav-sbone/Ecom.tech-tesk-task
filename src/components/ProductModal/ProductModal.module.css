@@ -20,6 +20,7 @@
   align-items: center;
   gap: 2rem;
   width: 75%;
+  animation: slideDown 0.5s ease-in-out;
 }
 
 .closeButton {
@@ -93,6 +94,17 @@
 .buyButton:hover {
   transform: scale(1.02);
   opacity: 90%;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 2000px) {
